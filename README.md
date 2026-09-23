@@ -1,104 +1,161 @@
-# 🏥 Enterprise Hospital Management & Clinical ERP System (SaaS)
+# 🏥 MediPulse — Enterprise Multi-Tenant Hospital & Clinical ERP System (SaaS)
+
+<div align="center">
+
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Capacitor](https://img.shields.io/badge/Capacitor-Android%20Mobile-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)](https://capacitorjs.com)
+[![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-PostgreSQL%20%2F%20SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlalchemy.org)
+[![Multi-Tenant](https://img.shields.io/badge/Architecture-Multi--Tenant%20SaaS-blueviolet?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge)](LICENSE)
+[![Author](https://img.shields.io/badge/Author-Muhammad%20Okasha-blueviolet?style=for-the-badge)](https://github.com/muhammadokashapak)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
-  <img src="https://img.shields.io/badge/Capacitor-Android-119EFF?style=for-the-badge&logo=capacitor&logoColor=white" alt="Capacitor" />
-  <img src="https://img.shields.io/badge/SQLite_%2F_PostgreSQL-003B57?style=for-the-badge&logo=postgresql&logoColor=white" alt="Database" />
-  <img src="https://img.shields.io/badge/Multi--Tenant-SaaS-blueviolet?style=for-the-badge" alt="Multi-Tenant" />
+  <strong>End-to-End Clinical Enterprise Resource Planning (ERP) Platform with 35+ Specialized Medical Modules, Strict Tenant Isolation & Multi-Platform Web/Mobile Support</strong>
 </p>
 
----
-
-## 📌 Executive Overview
-
-This is an end-to-end, multi-tenant **Hospital Management & Clinical ERP Platform** engineered for modern hospitals, medical colleges, and specialty clinics. The system automates the entire patient lifecycle from triage and outpatient departments (OPD) to inpatient admissions, ICU tracking, diagnostic laboratory workflows, operation theatre scheduling, pharmacy inventory, and billing/insurance processing.
-
-Designed with **multi-tenant data isolation**, role-based access control (RBAC), and multi-platform accessibility (Web + Android via Capacitor).
-
----
-
-## 🌟 Key Functional Modules (35+ Specialized Services)
-
-### 1. Clinical & Patient Care
-- **OPD & Triage Management:** Fast-track token queuing, vitals recording, and consultant doctor dispatching.
-- **Inpatient Admissions & Bed Allocation:** Dynamic bed occupancy tracking across General Wards, Private Rooms, and Isolation Units.
-- **Emergency Department (ED):** Priority triage (Red/Yellow/Green codes), rapid resuscitation logging, and trauma tracking.
-- **ICU & Critical Care:** Continuous vital trend monitoring, ventilator tracking, and arterial line charts.
-- **Operation Theatre (OT):** Surgical team scheduling, pre-op checklists, anesthesia notes, and recovery tracking.
-- **TMO & House Officer (HO) Training Portal:** Clinical duty rosters, supervisor case sign-offs, and rotational logbooks.
-
-### 2. Diagnostic & Ancillary Services
-- **Laboratory Information System (LIS):** Test requisitioning, automated sample barcode mapping, reagent tracking, and verified PDF lab reports.
-- **Radiology (RIS):** X-Ray, CT, MRI, and Ultrasound appointment scheduling and PACS integration links.
-- **Blood Bank Management:** Donor registries, blood group inventory tracking, cross-matching, and component separation (PRBC, FFP, Platelets).
-- **CSSD (Central Sterile Services):** Autoclave batch tracking, instrument sterilization logs, and tray issuance.
-
-### 3. Pharmacy, Inventory & Supplies
-- **Inpatient & Outpatient Pharmacy:** Prescription dispensing, barcode scanning, formulary search, and drug interaction alerts.
-- **Hospital Supply Chain & Inventory:** Real-time stock depletion alerts, purchase orders, expiry date tracking, and minimum stock alerts.
-- **Biomedical Engineering:** Medical device maintenance schedules, breakdown tickets, calibration logs, and AMC contracts.
-
-### 4. Hospital Operations, Facilities & Security
-- **Ambulance Dispatch:** Emergency vehicle allocation, driver contact, and GPS dispatching.
-- **Dietetics & Food Services:** Patient dietary restriction charts, calorie planning, and meal delivery audits.
-- **Infection Control & Surveillance:** Hospital-Acquired Infection (HAI) tracing and isolation protocols.
-- **Housekeeping & Waste Management:** Ward sanitization checklists and biomedical waste segregation logs.
-- **Mortuary Services:** Deceased record keeping, cold storage tracking, and handover documentation.
-- **Security & Visitor Passes:** Gate entry passes and visitor time tracking.
-
-### 5. Administration, HR & Finance
-- **Multi-Tenant SaaS Architecture:** Tenant isolation allowing multiple clinics or hospital branches on a single deployment.
-- **Dynamic Duty Shift Scheduler:** Automated shift scheduling, swap requests, and leave approval workflows.
-- **Billing & Revenue Cycle Management (RCM):** Consolidated patient invoices, itemized room/medication charges, payment gateways, and insurance claims.
-- **HR & Staff Management:** Staff payroll, attendance logging, credentials tracking, and role assignments.
+[📖 Overview](#-overview) •
+[🏛️ System Architecture](#-system-architecture) •
+[🌟 35+ Clinical Modules](#-35-specialized-clinical--operational-modules) •
+[👥 Demo Accounts](#-demo-accounts--credentials) •
+[📂 Directory Structure](#-directory-structure) •
+[🚀 Quickstart](#-quickstart--deployment) •
+[👨‍💻 Author](#-author--connect)
 
 ---
 
-## 🏛️ Architecture & Tech Stack
+</div>
+
+## 📖 Overview
+
+Modern hospital operations span complex interconnected ecosystems: triage queues, inpatient bed occupancy, dynamic duty shift rosters, surgical suites, sterile services, electronic prescriptions, and insurance billing.
+
+**MediPulse** is an enterprise-grade, multi-tenant **Hospital Management & Clinical ERP SaaS Platform** built with **FastAPI**, **SQLAlchemy**, and **React 18** (with native Android support via **Capacitor**). Engineered with **strict tenant data isolation**, it enables healthcare networks to manage multiple hospital branches, clinics, and diagnostic centers under a unified, HIPAA-compliant operating architecture.
+
+---
+
+## 🏛️ System Architecture
 
 ```mermaid
 graph TD
-    Client[Web & Android Client - React 18 + Capacitor] -->|REST / JSON| Gateway[FastAPI Backend Engine]
-    Gateway --> Auth[JWT Role-Based Auth & Tenant Middleware]
-    Auth --> Router[35+ Specialized Routers]
-    Router --> DB[(SQLAlchemy ORM - SQLite / PostgreSQL)]
-    Router --> Scheduler[APScheduler Duty & Queue Worker]
-```
+    subgraph Client Experience Layer
+        WEB[React 18 Web Portal - Vite & Tailwind CSS]
+        MOB[Native Android App via Capacitor Bridge]
+    end
 
-- **Backend:** Python 3.10+, FastAPI, SQLAlchemy, Pydantic, APScheduler, Passlib (bcrypt), PyJWT.
-- **Frontend:** React 18, Vite, Tailwind CSS, Lucide Icons, Axios.
-- **Mobile Engine:** Capacitor 6+ (Builds native Android APK).
-- **Desktop Wrapper:** PyInstaller / Inno Setup build configurations.
+    subgraph Security & Tenant Middleware
+        GATE[FastAPI REST Gateway]
+        AUTH[JWT Role-Based Access Control]
+        TENANT[Tenant Isolation Middleware: Cross-Branch Data Guard]
+    end
+
+    subgraph Clinical & Operational Engines
+        R1[OPD, Triage & Queue Router]
+        R2[Admissions, Wards & Bed Occupancy]
+        R3[Emergency Department & Trauma Triage]
+        R4[ICU, Ventilator & Vitals Tracking]
+        R5[Operation Theatre (OT) Scheduling]
+        R6[Pharmacy, Formulary & Expiry Watcher]
+        R7[Laboratory Information System (LIS)]
+        R8[Revenue Cycle Management & Billing]
+    end
+
+    subgraph Persistence Layer
+        DB[(SQLAlchemy ORM - PostgreSQL / SQLite3)]
+        SCHED[APScheduler Background Shift Worker]
+    end
+
+    WEB --> GATE
+    MOB --> GATE
+    GATE --> AUTH
+    AUTH --> TENANT
+    TENANT --> R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8
+    R1 & R2 & R3 & R4 & R5 & R6 & R7 & R8 --> DB
+    SCHED --> DB
+```
 
 ---
 
-## 🚀 Quick Start Guide
+## 🌟 35+ Specialized Clinical & Operational Modules
 
-### Prerequisites
-- Python 3.10+
-- Node.js 18+ & npm
-- Git
+### 1. Clinical Departments
+- **OPD & Token Triage:** Rapid patient check-in, vital signs recording, queue estimation, and specialist doctor dispatch.
+- **Inpatient Admissions:** Real-time general ward, private room, and isolation bed allocation matrix.
+- **Emergency Department (ED):** Standardized Manchester triage scoring (Red, Yellow, Green), resuscitation logging, and rapid referral.
+- **ICU & Critical Care:** Continuous arterial blood gas (ABG) tracking, ventilator parameters, and nurse telemetry logs.
+- **Operation Theatre (OT):** Surgical scheduling, anesthesia pre-op checklists, and recovery ward handovers.
+- **TMO & House Officer (HO) Logbook:** Clinical duty logging, procedural sign-offs, and consultant case approvals.
+
+### 2. Diagnostics, Ancillary & Facilities
+- **Laboratory Information System (LIS):** Test order entry, barcode sample matching, and verified PDF report generation.
+- **Radiology (RIS):** X-Ray, CT, MRI, Ultrasound appointments, and PACS viewer integration links.
+- **Blood Bank Services:** Donor screening, ABO/Rh typing, component tracking (PRBC, Platelets, FFP), and crossmatch logs.
+- **CSSD (Sterilization):** Autoclave batch tracking, surgical tray assembly, and biological spore test logging.
+- **Pharmacy & Formulary:** Drug dispensing, interaction alerts, minimum threshold re-ordering, and expiry quarantine.
+- **Biomedical Engineering:** Medical device maintenance schedules, breakdown ticketing, and calibration compliance.
+- **Facility Support:** Ambulance dispatch with GPS integration, dietetics meal planning, mortuary cold-storage tracking, and security visitor logs.
+
+---
+
+## 👥 Demo Accounts & Credentials
+
+The seed database is pre-configured with comprehensive demo personas for evaluation:
+
+| Department / Role | Demo Email | Access Level |
+|---|---|---|
+| **System Super Admin** | `admin@hospital.local` | Complete governance, branch creation, audit logs |
+| **Consultant Doctor** | `doctor@hospital.local` | OPD triage, inpatient ward rounds, clinical orders |
+| **Nurse Supervisor** | `nurse@hospital.local` | Vital signs, bed occupancy, medication charts |
+| **TMO Resident** | `tmo_surgery@hospital.local` | Procedural logbooks, duty rotations, case reviews |
+| **Pharmacist** | `pharmacist@hospital.local` | Drug dispensing, stock replenishment, inventory |
+| **Lab Technician** | `lab@hospital.local` | Diagnostic analysis, specimen receipt, report publishing |
+| **Receptionist** | `reception@hospital.local` | Patient intake, appointments, token issuing |
+| **Billing Specialist**| `billing@hospital.local` | Invoices, insurance claims, discharge clearances |
+
+*(Default password for demo accounts: `adminPass123` / `doctorPass123` / `nursePass123`)*
+
+---
+
+## 📂 Directory Structure
+
+```
+Hospital/
+│
+├── backend/                   # FastAPI high-performance Python backend
+│   ├── app/
+│   │   ├── routers/           # 35+ specialized department micro-routers
+│   │   ├── models.py          # SQLAlchemy database models & relational schema
+│   │   ├── schemas.py         # Pydantic validation & response schemas
+│   │   ├── tenant_middleware.py # Tenant isolation & multi-branch guard
+│   │   └── main.py            # FastAPI application bootstrap
+│   ├── seed_multi_tenant_saas.py # Automated database seeder
+│   └── requirements.txt
+├── frontend/                  # React 18 / Tailwind CSS client application
+│   ├── src/
+│   │   ├── pages/             # 35+ specialized role dashboards
+│   │   ├── components/        # Layout, duty rosters, patient queue banners
+│   │   └── App.jsx
+│   ├── android/               # Native Android Capacitor project
+│   └── package.json
+└── README.md                  # VIP Master Architecture Documentation
+```
+
+---
+
+## 🚀 Quickstart & Deployment
 
 ### 1. Backend Setup
 ```bash
 cd backend
 python -m venv venv
-# Windows:
-.\venv\Scripts\activate
-# Linux/macOS:
-source venv/bin/activate
+.\venv\Scripts\activate   # Linux/macOS: source venv/bin/activate
 
 pip install -r requirements.txt
-
-# Seed multi-tenant database with roles and initial hospital data
 python seed_multi_tenant_saas.py
-
-# Start development server
 uvicorn app.main:app --reload --port 8000
 ```
-Interactive Swagger documentation will be available at: `http://localhost:8000/docs`
+Interactive Swagger documentation: `http://localhost:8000/docs`
 
 ### 2. Frontend Setup
 ```bash
@@ -106,32 +163,16 @@ cd ../frontend
 npm install
 npm run dev
 ```
-Open `http://localhost:5173` in your browser.
+Open `http://localhost:5173` to explore the MediPulse ERP platform.
 
 ---
 
-## 👥 Default Demo Roles & Credentials
+## 👨‍💻 Author & Connect
 
-For local evaluation, the database can be initialized with default department accounts:
-
-| Department / Role | Demo Email | Access Level |
-|---|---|---|
-| **System Admin** | `admin@hospital.local` | Full system governance & settings |
-| **Consultant Doctor** | `doctor@hospital.local` | Clinical OPD, inpatient visits, prescriptions |
-| **Nurse Supervisor** | `nurse@hospital.local` | Vitals, bed management, medication admin |
-| **Pharmacist** | `pharmacist@hospital.local` | Dispensing, stock & expiry management |
-| **Lab Technician** | `lab@hospital.local` | Diagnostic tests & verified lab reports |
-| **Receptionist** | `reception@hospital.local` | Patient check-in, token issuing, appointments |
-| **Billing Specialist**| `billing@hospital.local` | Invoices, payments, and discharge summaries |
-
-*(Default password for demo accounts: `demoPass123` / see seeded credentials in config)*
-
----
-
-## 🔒 Security & Data Privacy
-- **Strict Tenant Separation:** Middleware prevents cross-tenant data leakage between hospital branches.
-- **Encrypted Credentials:** Passwords hashed with bcrypt; tokenized session authentication using JWT.
-- **Audit Trails:** Critical actions (admissions, prescriptions, billing overrides) are logged with timestamps and user identifiers.
+**Muhammad Okasha**  
+*Healthcare Software Architect & Full-Stack Specialist*  
+- **GitHub:** [@muhammadokashapak](https://github.com/muhammadokashapak)
+- **Repository:** [Hospital-Management-System](https://github.com/muhammadokashapak/Hospital-Management-System)
 
 ---
 

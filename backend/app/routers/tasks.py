@@ -157,7 +157,6 @@ def get_group_house_officers(
 
 class LogbookCreate(BaseModel):
     procedure_name: str
-    tmo_id: int
 
 @router.post("/logbook")
 def submit_logbook(
@@ -171,9 +170,19 @@ def submit_logbook(
     if current_user.role != models.RoleEnum.House_Officer:
         raise HTTPException(status_code=403, detail="Only House Officers can submit logbook entries.")
         
+    ho = current_user.ho_profile
+    if not ho or not ho.rotation_group_id:
+        raise HTTPException(status_code=400, detail="HO profile not found or not assigned to a rotation group.")
+        
+    # Find TMO assigned to the same rotation group
+    tmo = db.query(models.TMOProfile).filter(models.TMOProfile.rotation_group_id == ho.rotation_group_id).first()
+    if not tmo:
+        raise HTTPException(status_code=400, detail="No TMO assigned to your rotation group.")
+        
     entry = models.TMOLogbook(
         hospital_id=current_user.hospital_id,
-        tmo_id=data.tmo_id,
+        tmo_id=tmo.id,
+        ho_id=ho.id,
         procedure_name=data.procedure_name,
         supervisor_approved=False
     )
@@ -193,10 +202,13 @@ def get_my_logbook(
     if current_user.role != models.RoleEnum.House_Officer:
         raise HTTPException(status_code=403, detail="Only HOs can query their own logbook.")
         
-    # Find the TMO assigned to the HO's rotation group to cross link, or just query all
+    if not current_user.ho_profile:
+        return []
+        
     entries = db.query(models.TMOLogbook).filter(
-        models.TMOLogbook.hospital_id == current_user.hospital_id
-    ).all() # Simple retrieval for local test
+        models.TMOLogbook.hospital_id == current_user.hospital_id,
+        models.TMOLogbook.ho_id == current_user.ho_profile.id
+    ).all()
     
     return [
         {

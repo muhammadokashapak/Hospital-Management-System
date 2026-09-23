@@ -13,3 +13,5 @@ __pycache__/
 .coverage
 htmlcov/
 *.log
+credentials.txt
+passwords.md

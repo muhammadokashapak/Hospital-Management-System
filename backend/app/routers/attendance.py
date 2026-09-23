@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from .. import models, schemas, database, dependencies
 
 router = APIRouter(
@@ -29,9 +29,10 @@ def silent_check_in(db: Session = Depends(database.get_db), current_user: models
         
     # Create new attendance record
     new_attendance = models.Attendance(
+        hospital_id=current_user.hospital_id,
         doctor_id=doctor.id,
-        login_date=today,
-        check_in=datetime.utcnow()
+        login_date=date.today(),
+        check_in=datetime.now(timezone.utc)
     )
     db.add(new_attendance)
     db.commit()

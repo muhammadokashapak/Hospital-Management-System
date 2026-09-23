@@ -1,10 +1,26 @@
 @import "tailwindcss";
 
 body {
-  background-color: #f9fafb;
-  color: #111827;
+  background-color: #f8fafc; /* Crisp Light Background */
+  color: #0f172a; /* Deep Slate High-Contrast Text */
   font-family: ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure all form inputs, selects, and textareas have crisp white bg & dark text */
+input, select, textarea {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #64748b !important;
+  opacity: 1;
+}
+
+select option {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
 }
 
 /* Custom styles for printing */

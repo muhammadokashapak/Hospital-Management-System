@@ -1,0 +1,46 @@
+Yeh tamam **30 Hospital Departments / Roles** ke demo login accounts, unke emails, passwords, aur portal URLs ki complete list hai.
+
+Tamam accounts ka universal password **`Password123`** hai (Capital **P** ke sath):
+
+---
+
+### 🔑 Complete 30-Department Login Credentials List
+
+| # | Department / Role | Login Email | Password | Direct Portal Route |
+| :---: | :--- | :--- | :--- | :--- |
+| 1 | ⚙️ **System Admin** | `admin@jth.pk` | **`Password123`** | `/admin` *(Access all 30 via top switcher)* |
+| 2 | 📋 **Receptionist** | `receptionist1@jth.pk` | **`Password123`** | `/reception` |
+| 3 | 🩺 **OPD Doctor** | `doc1@jth.pk` | **`Password123`** | `/doctor` |
+| 4 | 🏥 **Ward Nurse** | `nurse1@jth.pk` | **`Password123`** | `/nurse` |
+| 5 | 🚨 **Emergency Staff** | `emergency_staff1@jth.pk` | **`Password123`** | `/emergency` |
+| 6 | 🫀 **ICU Staff** | `icu_staff1@jth.pk` | **`Password123`** | `/icu` |
+| 7 | 💊 **Pharmacist** | `pharmacist1@jth.pk` | **`Password123`** | `/pharmacist` |
+| 8 | 🧪 **Lab Technician** | `lab_tech1@jth.pk` | **`Password123`** | `/lab` |
+| 9 | 📡 **Radiology Tech** | `radiology_tech1@jth.pk` | **`Password123`** | `/radiology` |
+| 10 | 🩸 **Blood Bank Staff** | `blood_bank_staff1@jth.pk` | **`Password123`** | `/blood-bank` |
+| 11 | 🔪 **OT Staff** | `ot_staff1@jth.pk` | **`Password123`** | `/ot` |
+| 12 | 💰 **Billing / Cashier** | `billing1@jth.pk` | **`Password123`** | `/billing` |
+| 13 | 🏛️ **Accounts Manager** | `admin@jth.pk` | **`Password123`** | `/accounts` |
+| 14 | 📦 **Inventory Manager** | `inventory1@jth.pk` | **`Password123`** | `/inventory` |
+| 15 | 👥 **HR Officer** | `hr1@jth.pk` | **`Password123`** | `/hr` |
+| 16 | 👨‍⚕️ **TMO (Senior Doc)** | `tmo.medicine@hospital.com` | **`Password123`** | `/tmo` |
+| 17 | 🧑‍⚕️ **House Officer** | `ho_0_m0@jth.pk` | **`Password123`** | `/ho` |
+| 18 | 🔥 **CSSD Sterilization** | `admin@jth.pk` | **`Password123`** | `/cssd` |
+| 19 | 🛡️ **Quality Assurance** | `admin@jth.pk` | **`Password123`** | `/qa` |
+| 20 | ☣️ **Infection Control** | `admin@jth.pk` | **`Password123`** | `/infection-control` |
+| 21 | 🔧 **Biomedical Engg** | `admin@jth.pk` | **`Password123`** | `/biomedical` |
+| 22 | 🔨 **Maintenance** | `admin@jth.pk` | **`Password123`** | `/maintenance` |
+| 23 | ✨ **Housekeeping** | `admin@jth.pk` | **`Password123`** | `/housekeeping` |
+| 24 | 🛡️ **Security Staff** | `admin@jth.pk` | **`Password123`** | `/security` |
+| 25 | 🚑 **Ambulance Driver** | `ambulance_driver1@jth.pk` | **`Password123`** | `/ambulance` |
+| 26 | 🍴 **Dietitian** | `admin@jth.pk` | **`Password123`** | `/dietetics` |
+| 27 | ✝️ **Mortuary Staff** | `admin@jth.pk` | **`Password123`** | `/mortuary` |
+| 28 | 📁 **Medical Records (MRD)**| `doc1@jth.pk` | **`Password123`** | `/checked-patients` |
+| 29 | 🏥 **IPD Admissions** | `nurse1@jth.pk` | **`Password123`** | `/admissions` |
+| 30 | 📺 **Live OPD Queue TV** | *No Login Needed* | *No Password* | `/queue` |
+
+---
+
+💡 **Pro Tip**: Testing ke liye aap **`admin@jth.pk`** aur **`Password123`** se login karein. Login karne ke baad Top Bar par diye gaye **"Switch Department (30 Modules)..."** Dropdown se aap 1-click mein tamam 30 departments switch kar ke dekh sakty hain!
+
+Login URL: [http://localhost:5173/login](http://localhost:5173/login)

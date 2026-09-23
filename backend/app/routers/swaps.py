@@ -78,12 +78,15 @@ def admin_approve_swap(
     if not swap or swap.status != models.SwapStatusEnum.Pending_Admin:
         raise HTTPException(status_code=400, detail="Swap must be Pending_Admin to approve")
 
-    shift_giving = db.query(models.DutyShift).get(swap.shift_to_give_id)
-    shift_taking = db.query(models.DutyShift).get(swap.shift_to_take_id) if swap.shift_to_take_id else None
+    shift_giving = db.query(models.DutyShift).filter(models.DutyShift.id == swap.shift_to_give_id, models.DutyShift.hospital_id == current_admin.hospital_id).first()
+    shift_taking = db.query(models.DutyShift).filter(models.DutyShift.id == swap.shift_to_take_id, models.DutyShift.hospital_id == current_admin.hospital_id).first() if swap.shift_to_take_id else None
 
-    # Fetch genders
-    requester = db.query(models.HouseOfficer).get(swap.requester_ho_id)
-    acceptor = db.query(models.HouseOfficer).get(swap.acceptor_ho_id)
+    # Fetch HO profiles
+    requester = db.query(models.HouseOfficer).filter(models.HouseOfficer.id == swap.requester_ho_id).first()
+    acceptor = db.query(models.HouseOfficer).filter(models.HouseOfficer.id == swap.acceptor_ho_id).first()
+    
+    if not shift_giving or not requester or not acceptor:
+        raise HTTPException(status_code=404, detail="Shift or HO not found")
     
     # Validation Logic for Acceptor taking requester's shift
     if acceptor.user.gender == models.GenderEnum.Female:
